@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffffff; /* Set background color to white */
+            color: #000000; /* Set text color to black */
+            font-family: 'Times New Roman', Times, serif; /* Set font to Times New Roman */
+        }
+        .login-container {
+            background-color: #007bff; /* Blue background color */
+            padding: 30px;
+            margin-top: 100px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
+            text-align: center; /* Center align content */
+        }
+        .login-container h2 {
+            text-align: center;
+            font-weight: bold;
+            color: #ffffff; /* Set heading color to white */
+        }
+        .login-container form {
+            color: #ffffff; /* Set form text color to white */
+        }
+        .login-container form input[type="text"],
+        .login-container form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ffffff; /* Set input border color to white */
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #000000; /* Set input text color to black */
+            background-color: #ffffff; /* Set input background color to white */
+        }
+        .login-container button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #060606; /* Dark grey button background color */
+            color: #ffffff; /* Button text color to white */
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .login-container button[type="submit"]:hover {
+            background-color: #000000; /* Black button background color on hover */
+        }
+        .login-container a {
+            color: #000000; /* Link color */
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 login-container">
+        <h2 class="mt-4 mb-4">Login</h2>
+        <form method="post" class="mb-4">
+          {% csrf_token %}
+          <input type="text" name="username" placeholder="Username" required>
+          <br>
+          <input type="password" name="password" placeholder="Password" required>
+          <br>
+          <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="{% url 'register' %}" class="btn btn-link" style="color: #000000;">Register here</a>.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

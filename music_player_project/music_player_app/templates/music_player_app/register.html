@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            background-color: #ffffff; /* Set background color to white */
+            color: #000000; /* Set text color to black */
+            font-family: 'Times New Roman', Times, serif; /* Set font to Times New Roman */
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h2 {
+            color: #0d0d0d; /* Spotify green */
+            text-align: center;
+            font-weight: bold;
+        }
+        form {
+            background-color: #007bff; /* Blue background color */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label, .btn {
+            color: #ffffff; /* White label and button text */
+        }
+        .form-control {
+            background-color: #000000; /* Black input background */
+            color: #ffffff; /* White input text */
+            border: none;
+        }
+        .btn-primary {
+            background-color: #060606; /* Dark grey button background */
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #000000; /* Black button background on hover */
+        }
+        .btn-link {
+            color: #000000; /* Spotify green */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="mt-4 mb-4">Register</h2>
+            <form method="post" class="mb-4">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <p>Already have an account? <a href="{% url 'login' %}" class="btn btn-link" style="color: #1DB954;">Login here</a>.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
